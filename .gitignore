@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.env
+.DS_Store
+# Raw benchmark downloads can be large; keep them out of source control.
+datasets/hotpotqa/*.json
+datasets/2wikimultihopqa/*.json
+# Generated evaluation sample may be tracked separately if desired.
+
+.env
+results/
+__pycache__/
+*.pyc
