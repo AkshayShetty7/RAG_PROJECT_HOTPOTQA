@@ -31,15 +31,45 @@ The objective is to compare retrieval effectiveness and evaluate answer quality 
 
 ## System Workflow
 
-1. Load the 100 HotpotQA questions and their associated contexts.
-2. Preprocess documents and extract sentences.
-3. Split documents into retrieval chunks while preserving sentence identifiers.
-4. Generate embeddings using BGE.
-5. Build FAISS and BM25 indexes.
-6. Retrieve relevant chunks using Dense, BM25 and Hybrid RRF methods.
-7. Apply BGE reranking to improve retrieval ranking.
-8. Generate answers using the Groq LLM.
-9. Evaluate retrieval performance and generated answers.
+
+
+                    User Query
+                         |
+                         v
+                  Query Processing
+                         |
+                         v
+                 Parallel Retrieval
+                    /        \
+                   /          \
+                  v            v
+          Dense Retrieval   Sparse Retrieval
+          BGE Embeddings       BM25
+              + FAISS
+                  \            /
+                   \          /
+                    v        v
+              Reciprocal Rank Fusion
+                       (RRF)
+                         |
+                         v
+                 Candidate Chunks
+                         |
+                         v
+                Cross-Encoder Reranking
+                   (BGE Reranker)
+                         |
+                         v
+               Top-K Relevant Chunks
+                         |
+                         v
+                 Context Construction
+                         |
+                         v
+                  Groq-hosted LLM
+                         |
+                         v
+                  Generated Answer
 
 ## Experimental Results
 
