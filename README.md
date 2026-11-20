@@ -94,7 +94,7 @@ It achieved the highest Recall@5, MRR and nDCG@10 among the evaluated methods.
 | Metric | Mean Score |
 |---|---:|
 | Faithfulness | 0.8383 |
-| Factual Correctness (Raw RAGAS) | 0.8702 |
+| Factual Correctness | 0.8702 |
 | Context Recall | 0.9500 |
 
 
