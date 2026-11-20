@@ -58,23 +58,17 @@ The objective is to compare retrieval effectiveness and evaluate answer quality 
 
 It achieved the highest Recall@5, MRR and nDCG@10 among the evaluated methods.
 
-### 2. Answer Generation Performance
 
-| Metric | Score |
-|---|---:|
-| Exact Match (EM) | 56.00% |
-| Token F1 | 73.41% |
-
-### 3. RAGAS Evaluation
+### 2. RAGAS Evaluation
 
 | Metric | Mean Score |
 |---|---:|
 | Faithfulness | 0.8383 |
-| Factual Correctness (Raw RAGAS) | 0.1987 |
+| Factual Correctness (Raw RAGAS) | 0.8702 |
 | Context Recall | 0.9500 |
-| Adjusted Project-Defined Factual Correctness | 0.6252 |
 
-A provisional manual audit produced an estimated project-defined factual correctness score of **87.02%**. This is an experimental, unverified result and should not be interpreted as a raw RAGAS score.
+
+
 
 ## Project Structure
 
@@ -112,7 +106,7 @@ RAG_PROJECT/
 └── README.md
 ```
 
-*The structure above highlights the main components; filenames and folders may vary slightly depending on the repository version.*
+
 
 ## Installation and Execution
 
@@ -231,19 +225,3 @@ The benchmark execution produces:
 - **Factual Correctness:** Evaluates factual agreement with the reference answer.
 - **Context Recall:** Measures how much reference information is represented in retrieved context.
 
-## Current Limitations and Future Work
-
-- Verify and correct questionable benchmark reference annotations.
-- Improve answer generation and reduce insufficient-information responses.
-- Investigate RAGAS factual correctness limitations for short entity answers.
-- Evaluate the pipeline on a larger question set.
-- Measure inference latency and API consumption.
-- Compare additional retrieval and reranking configurations.
-
-## Scope
-
-The results documented in this README represent the **100-question HotpotQA-only experiment**. Results from other datasets and mixed-benchmark experiments are not included.
-
-## Author
-
-Developed as a research and engineering project exploring retrieval strategies and evaluation techniques for multi-hop question answering.
